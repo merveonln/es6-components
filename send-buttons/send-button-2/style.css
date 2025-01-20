@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f2f5;
+    font-family: -apple-system, system-ui, sans-serif;
+}
+
+.send-btn-slide {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: visible;
+    transition: all 0.3s ease;
+}
+
+.send-btn-slide:hover {
+    padding-right: 45px;
+}
+
+.send-btn-slide svg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -30px;
+    transition: 0.3s ease;
+}
+
+.send-btn-slide:hover svg {
+    right: 15px;
+    transform: rotate(-45deg);
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) rotate(-45deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(50px, -100px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+.send-btn-slide.clicked svg {
+    animation: fly 1s ease-out forwards;
+}

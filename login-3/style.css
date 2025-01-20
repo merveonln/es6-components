@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1cb5e0, #000851);
+}
+
+.container {
+    width: 600px;
+    position: relative;
+    height: 55vh;
+}
+
+.form-wrapper {
+    position: relative;
+}
+
+.form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.6s ease-in-out;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #1cb5e0;
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus+label,
+.form-group input:not(:placeholder-shown)+label {
+    top: -10px;
+    left: 8px;
+    font-size: 12px;
+    color: #1cb5e0;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #1cb5e0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #000851;
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.switch-form span {
+    color: #1cb5e0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+#login-form,
+#register-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-form-box,
+.register-form-box {
+    padding: 30px 20px;
+    width: 50%;
+}
+
+.form-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.form-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+
+    #login-form,
+    #register-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-form-box,
+    .register-form-box {
+        padding: 30px 20px;
+        width: 100%;
+    }
+
+    .form-image img {
+        width: 100%;
+    }
+}
